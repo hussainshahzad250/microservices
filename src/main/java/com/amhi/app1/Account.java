@@ -1,4 +1,4 @@
-package io.pivotal.microservices.accounts;
+package com.amhi.app1;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -48,12 +48,7 @@ public class Account implements Serializable {
 		return id;
 	}
 
-	/**
-	 * Set JPA id - for testing and JPA only. Not intended for normal use.
-	 * 
-	 * @param id
-	 *            The new id.
-	 */
+	
 	protected void setId(long id) {
 		this.id = id;
 	}

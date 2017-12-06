@@ -1,14 +1,15 @@
-package io.pivotal.microservices.accounts;
+package com.amhi.app1;
 
 import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.microservices.exceptions.AccountNotFoundException;
+import com.amhi.exception.AccountNotFoundException;
 
 @RestController
 public class AccountsController {
@@ -25,7 +26,7 @@ public class AccountsController {
 				+ accountRepository.countAccounts() + " accounts");
 	}
 
-	@RequestMapping("/accounts/{accountNumber}")
+	@RequestMapping(value="/accounts/{accountNumber}",produces = { MediaType.APPLICATION_JSON_VALUE })
 	public Account byNumber(@PathVariable("accountNumber") String accountNumber) {
 
 		logger.info("accounts-service byNumber() invoked: " + accountNumber);

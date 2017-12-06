@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-     name: service2
+     name: app2
   freemarker:
     enabled: false           
   thymeleaf:
