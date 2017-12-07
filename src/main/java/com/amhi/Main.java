@@ -25,6 +25,8 @@ public class Main {
 			Application1.main(args);
 		}else if (serverName.equals("app2")) {
 			Application2.main(args);
+		}else if (serverName.equals("app3")) {
+			Application3.main(args);
 		}else {
 			System.out.println("Unknown server type: " + serverName);
 			usage();

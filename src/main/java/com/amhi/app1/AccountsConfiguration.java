@@ -19,8 +19,8 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 
 @Configuration
 @ComponentScan
-@EntityScan("com.amhi.app1")
-@EnableJpaRepositories("com.amhi.app1")
+@EntityScan("com.amhi.*")
+@EnableJpaRepositories("com.amhi.*")
 @PropertySource("classpath:client1.properties")
 public class AccountsConfiguration {
 
