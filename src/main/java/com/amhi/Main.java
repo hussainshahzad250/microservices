@@ -27,6 +27,8 @@ public class Main {
 			Application2.main(args);
 		}else if (serverName.equals("app3")) {
 			Application3.main(args);
+		}else if (serverName.equals("app4")) {
+			Application4.main(args);
 		}else {
 			System.out.println("Unknown server type: " + serverName);
 			usage();
@@ -35,7 +37,7 @@ public class Main {
 
 	protected static void usage() {
 		System.out.println("Usage: java -jar <abc.jar>	<server-name> [server-port]");
-		System.out.println("where server-name is 'main', 'app1','app2' "
+		System.out.println("where server-name is 'main', 'app1','app2','app3','app4' "
 				+ " and server-port > 1024");
 	}
 }

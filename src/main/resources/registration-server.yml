@@ -1,5 +1,9 @@
 # Configure this Discovery Server
+
+
 eureka:
+  datacenter: Main
+  environment: prod
   instance:
     hostname: localhost
   client:  

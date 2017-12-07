@@ -9,10 +9,6 @@ import org.springframework.context.annotation.Import;
 import com.amhi.app1.AccountRepository;
 import com.amhi.app1.AccountsConfiguration;
 
-//@EnableDiscoveryClient
-//@SpringBootApplication
-//public class Application1 {
-
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @Import(AccountsConfiguration.class)
