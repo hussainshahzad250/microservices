@@ -1,0 +1,28 @@
+# Spring properties
+spring:
+  application:
+     name: app5
+  freemarker:
+    enabled: false           
+  thymeleaf:
+    cache: false             
+    prefix: classpath:/client5/templates/
+                             
+
+# Map the error path to error template (for Thymeleaf)
+error:
+  path: /error
+
+# HTTP Server
+server:
+  port: 2080   # HTTP (Tomcat) port
+
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2030/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+      
+

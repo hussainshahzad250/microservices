@@ -1,10 +1,12 @@
-/**
- * 
- */
 package com.amhi.configuration;
 
 import java.util.ResourceBundle;
 
+/**
+ * 
+ * @author shahzad
+ *
+ */
 public class Constants {
 
 	public static final String RESOURCE_BUNDLE_NAME = "db";

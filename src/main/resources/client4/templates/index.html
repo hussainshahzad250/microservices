@@ -6,7 +6,7 @@
 
 <body>
 
-	<h1>Microservices Demo - Web Server</h1>
+	<h1>Microservices</h1>
 	<h3>Overview</h3>
 	<ul>
 		<li>Demo defines a simple web-application for accessing accounts
@@ -19,12 +19,12 @@
 
 	<ul class="openlist">
 		<li>Eureka Dashboard: <a
-			href="http://localhost:1111">http://localhost:1111</a></li>
+			href="http://localhost:2070">Home</a></li>
 		<li>Check applications registered: <a
-			href="http://localhost:1111/eureka/apps/">http://localhost:1111/eureka/apps/</a></li>
-		<li>Fetch account #123456789: <a th:href="@{/accounts/123456789}">/accounts/123456789</a></li>
+			href="http://localhost:2070/eureka/apps/">http://localhost:2070/eureka/apps/</a></li>
+		<li>Fetch account #123456789: <a th:href="@{/api/userList}">User List</a></li>
 
-		<li>Fetch by name: <a th:href="@{/accounts/owner/Keri}">/accounts/owner/Keri</a></li>
+		<li>Fetch by Id: <a th:href="@{/api/user/22}">User 22</a></li>
 
 		<li>Account <a th:href="@{/accounts/search}">Search</a></li>
 	</ul>

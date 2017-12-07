@@ -13,7 +13,6 @@ import com.amhi.app1.AccountsConfiguration;
  * @author shahzad
  *
  */
-
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @Import(AccountsConfiguration.class)

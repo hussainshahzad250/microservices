@@ -12,7 +12,9 @@ public interface UserService {
 
 	List<User> getUsers();
 
-	boolean deletetUserById(String id);
+	boolean deletetUserById(Long id);
+
+	User getUserById(Long id);
 
 
 }

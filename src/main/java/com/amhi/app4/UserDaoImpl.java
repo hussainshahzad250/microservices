@@ -36,6 +36,64 @@ public class UserDaoImpl implements UserDao {
 		return true;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<User> getUsers() {
+		Session session = sessionFactory.openSession();
+		List<User> users = null;
+		try {
+			Criteria ctr = session.createCriteria(User.class);
+			users = ctr.list();
+			logger.info("USERS LIST :: " + users);
+
+		} catch (Exception e) {
+			logger.info("EXCEPTION OCCURS Reason :: " + e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		return users;
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		User user = null;
+		try {
+			Session session = sessionFactory.openSession();
+
+			Criteria criteria = session.createCriteria(User.class);
+			user = (User) criteria.add(Restrictions.eq("id", id))
+					.uniqueResult();
+			logger.info("Existing User :: " + user);
+
+		} catch (Exception e) {
+			logger.info("EXCEPTION OCCURS Reason :: " + e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		return user;
+	}
+
+	@Override
+	public boolean deletetUserById(Long id) {
+		Session session = sessionFactory.openSession();
+		User user = null;
+		try {
+
+			Criteria criteria = session.createCriteria(User.class);
+			user = (User) criteria.add(Restrictions.eq("id", id))
+					.uniqueResult();
+			logger.info("Existing User :: " + user);
+			session.delete(user);
+			session.flush();
+
+		} catch (Exception e) {
+			logger.info("EXCEPTION OCCURS Reason :: " + e.getMessage());
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public User getUserByEmail(String email) {
@@ -90,32 +148,4 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<User> getUsers() {
-		Session session = sessionFactory.openSession();
-		List<User> users = null;
-		try {
-			Criteria ctr = session.createCriteria(User.class);
-			users = ctr.list();
-			logger.info("USERS LIST :: " + users);
-
-		} catch (Exception e) {
-			logger.info("EXCEPTION OCCURS Reason :: " + e.getMessage());
-			e.printStackTrace();
-			return null;
-		}
-		return users;
-	}
-
-	@Override
-	public boolean deletetUserById(String id) {
-		Session session = sessionFactory.openSession();
-		try {
-			session.delete(id);
-		} catch (Exception e) {
-			return false;
-		}
-		return true;
-	}
 }

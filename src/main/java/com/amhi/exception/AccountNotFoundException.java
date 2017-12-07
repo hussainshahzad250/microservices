@@ -1,4 +1,4 @@
-package com.amhi.common.exception;
+package com.amhi.exception;
 
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;

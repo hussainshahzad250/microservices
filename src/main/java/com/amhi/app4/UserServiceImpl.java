@@ -15,10 +15,24 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean saveUser(User user) {
-		
 		logger.info("going to save, now at service level");
 		return userDao.saveUser(user);
 
+	}
+
+	@Override
+	public List<User> getUsers() {
+		return userDao.getUsers();
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		return userDao.getUserById(id);
+	}
+
+	@Override
+	public boolean deletetUserById(Long id) {
+		return userDao.deletetUserById(id);
 	}
 
 	@Override
@@ -31,18 +45,5 @@ public class UserServiceImpl implements UserService {
 		return userDao.login(email, password);
 
 	}
-
-	@Override
-	public List<User> getUsers() {
-
-		return userDao.getUsers();
-	}
-
-	@Override
-	public boolean deletetUserById(String id) {
-		
-		return userDao.deletetUserById(id);
-	}
-	
 
 }

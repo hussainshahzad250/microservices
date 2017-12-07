@@ -22,7 +22,6 @@ public class MyController {
 	private UserService userService;
 	final static Logger logger = Logger.getLogger(MyController.class);
 
-	
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
 	public ResponseEntity<Object> getUsers() {
 
@@ -37,7 +36,69 @@ public class MyController {
 
 		return new ResponseEntity<Object>(users, HttpStatus.OK);
 	}
-	
+
+	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Object> getUserById(@PathVariable Long id) {
+
+		Response response = null;
+		User availUser = userService.getUserById(id);
+
+		if (availUser == null) {
+			response = new Response();
+			response.setMessage("User Not Found");
+			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity<Object>(availUser, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = { "/user/{id}" }, method = RequestMethod.POST)
+	public ResponseEntity<Object> deletetUserById(@PathVariable Long id) {
+
+		Response response = null;
+		boolean deletedUser= userService.deletetUserById(id);
+
+		if (!deletedUser) {
+			response = new Response();
+			response.setMessage("User Not Found");
+			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
+		}
+		response = new Response();
+		response.setMessage("User Deleted Successfully");
+
+		return new ResponseEntity<Object>(response, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = { "/user/email/{email}", "/" }, method = RequestMethod.GET)
+	public ResponseEntity<Object> getUserByEmail(@PathVariable String email) {
+
+		Response response = null;
+		User availUser = userService.getUserByEmail(email);
+
+		if (availUser == null) {
+			response = new Response();
+			response.setMessage("User Not Found");
+			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity<Object>(availUser, HttpStatus.OK);
+	}
+
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public ResponseEntity<Object> getUserEmail(@RequestParam String email) {
+
+		Response response = null;
+		User availUser = userService.getUserByEmail(email);
+
+		if (availUser == null) {
+			response = new Response();
+			response.setMessage("User Not Found");
+			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity<Object>(availUser, HttpStatus.OK);
+	}
+
 	@RequestMapping(value = "/register", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> saveUser(@RequestBody User user) {
 		logger.debug("going to Save ....");
@@ -79,7 +140,8 @@ public class MyController {
 			if (loginSuccess == null) {
 				response = new Response();
 				response.setMessage("username or password is incorrect??");
-				return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Object>(response,
+						HttpStatus.BAD_REQUEST);
 			}
 			response = new Response();
 			response.setMessage("Login Successfully");
@@ -90,54 +152,5 @@ public class MyController {
 		}
 		return new ResponseEntity<Object>(loginSuccess, HttpStatus.OK);
 
-	}
-
-	@RequestMapping(value = {"/user/{email}","/"}, method = RequestMethod.GET)
-	public ResponseEntity<Object> getUserByEmail(@PathVariable String email) {
-
-		Response response = null;
-		User availUser = userService.getUserByEmail(email);
-
-		if (availUser == null) {
-			response = new Response();
-			response.setMessage("User Not Found");
-			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
-		}
-
-		return new ResponseEntity<Object>(availUser, HttpStatus.OK);
-	}
-	
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
-	public ResponseEntity<Object> getUserEmail(@RequestParam String email) {
-
-		Response response = null;
-		User availUser = userService.getUserByEmail(email);
-
-		if (availUser == null) {
-			response = new Response();
-			response.setMessage("User Not Found");
-			return new ResponseEntity<Object>(response, HttpStatus.NOT_FOUND);
-		}
-
-		return new ResponseEntity<Object>(availUser, HttpStatus.OK);
-	}
-	
-	
-	@RequestMapping(value = {"/user/{id}"}, method = RequestMethod.POST)
-	public ResponseEntity<Object> deletetUserByEmail(@PathVariable String id) {
-
-		Response response = null;
-		boolean deletetUserById = userService.deletetUserById(id);
-		
-
-		if (!deletetUserById) {
-			response = new Response();
-			response.setMessage("User Not Found");
-			return new ResponseEntity<Object>(response, HttpStatus.BAD_REQUEST);
-		}
-		response = new Response();
-		response.setMessage("Deleted");
-
-		return new ResponseEntity<Object>(response, HttpStatus.OK);
 	}
 }

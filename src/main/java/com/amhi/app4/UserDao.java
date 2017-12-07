@@ -12,5 +12,7 @@ public interface UserDao {
 
 	List<User> getUsers();
 
-	boolean deletetUserById(String id);
+	boolean deletetUserById(Long id);
+
+	User getUserById(Long id);
 }
