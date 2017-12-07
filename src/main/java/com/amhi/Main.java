@@ -1,5 +1,9 @@
 package com.amhi;
-
+/**
+ * 
+ * @author shahzad
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -20,7 +24,7 @@ public class Main {
 
 		if (serverName.equals("main")
 				|| serverName.equals("mainApp")) {
-			RegisterApplication.main(args);
+			EurekaServerApplication.main(args);
 		} else if (serverName.equals("app1")) {
 			Application1.main(args);
 		}else if (serverName.equals("app2")) {

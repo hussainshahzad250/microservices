@@ -1,4 +1,4 @@
-package coma.mhi.app3;
+package com.amhi.app3;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

@@ -7,19 +7,19 @@ import org.springframework.context.annotation.Import;
 
 import com.amhi.configuration.AppConfig;
 
+/**
+ * 
+ * @author shahzad
+ *
+ */
 
-
-
-
-
-//@Configuration
-//@ComponentScan("com.amhi.*")
-//@EnableAutoConfiguration
-
-@SpringBootApplication(scanBasePackages={"com.amhi.*"})
+// @Configuration
+// @ComponentScan("com.amhi.*")
+// @EnableAutoConfiguration
+@SpringBootApplication(scanBasePackages = { "com.amhi.*" })
 @Import(AppConfig.class)
 @EnableDiscoveryClient
-public class Application4{
+public class Application4 {
 
 	public static void main(String[] args) {
 		System.setProperty("spring.config.name", "client-server4");

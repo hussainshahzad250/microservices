@@ -8,6 +8,11 @@ import org.springframework.context.annotation.Import;
 
 import com.amhi.app1.AccountRepository;
 import com.amhi.app1.AccountsConfiguration;
+/**
+ * 
+ * @author shahzad
+ *
+ */
 
 @EnableAutoConfiguration
 @EnableDiscoveryClient
