@@ -1,8 +1,10 @@
-package com.amhi.app4;
+package com.amhi.dao;
 
 import java.util.List;
 
-public interface UserService {
+import com.amhi.model.User;
+
+public interface UserDao {
 
 	boolean saveUser(User user);
 
@@ -15,6 +17,4 @@ public interface UserService {
 	boolean deletetUserById(Long id);
 
 	User getUserById(Long id);
-
-
 }

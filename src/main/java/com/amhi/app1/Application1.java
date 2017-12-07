@@ -1,13 +1,10 @@
-package com.amhi;
+package com.amhi.app1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
-
-import com.amhi.app1.AccountRepository;
-import com.amhi.app1.AccountsConfiguration;
 /**
  * 
  * @author shahzad

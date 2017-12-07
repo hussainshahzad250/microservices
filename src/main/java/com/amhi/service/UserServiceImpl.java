@@ -1,10 +1,13 @@
-package com.amhi.app4;
+package com.amhi.service;
 
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.amhi.dao.UserDao;
+import com.amhi.model.User;
 
 @Service
 public class UserServiceImpl implements UserService {

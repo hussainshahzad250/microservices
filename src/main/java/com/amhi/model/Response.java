@@ -1,4 +1,4 @@
-package com.amhi.app4;
+package com.amhi.model;
 
 public class Response {
 

@@ -1,7 +1,7 @@
 # Spring properties
 spring:
   application:
-     name: app5
+     name: save-delete
   freemarker:
     enabled: false           
   thymeleaf:

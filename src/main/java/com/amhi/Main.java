@@ -1,5 +1,9 @@
 package com.amhi;
 
+import com.amhi.app1.Application1;
+import com.amhi.app4.Application4;
+import com.amhi.app5.Application5;
+
 /**
  * 
  * @author shahzad
@@ -33,9 +37,9 @@ public class Main {
 			Application3.main(args);
 		} else if (serverName.equals("app4")) {
 			Application4.main(args);
-		} /*else if (serverName.equals("app5")) {
+		} else if (serverName.equals("app5")) {
 			Application5.main(args);
-		}*/ else {
+		} else {
 			System.out.println("Unknown server type: " + serverName);
 			usage();
 		}

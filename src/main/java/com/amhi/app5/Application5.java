@@ -1,6 +1,7 @@
-package com.amhi;
+package com.amhi.app5;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
@@ -12,7 +13,8 @@ import com.amhi.configuration.AppConfig;
  * @author shahzad
  *
  */
-@SpringBootApplication(scanBasePackages = { "com.amhi.app4" })
+//@SpringBootApplication(scanBasePackages = { "com.amhi.app5" })
+@EnableAutoConfiguration
 @Import(AppConfig.class)
 @EnableDiscoveryClient
 public class Application5 {

@@ -29,7 +29,7 @@ public class HibernateConfiguration extends WebMvcConfigurerAdapter {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
-		sessionFactory.setPackagesToScan(new String[] { "com.amhi.*" });// {
+		sessionFactory.setPackagesToScan(new String[] { "com.amhi.model" });// {
 																		// "com.amhi.model"
 																		// }
 		sessionFactory.setHibernateProperties(hibernateProperties());

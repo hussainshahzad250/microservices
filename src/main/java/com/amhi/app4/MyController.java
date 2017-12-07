@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.amhi.model.Response;
+import com.amhi.model.User;
+import com.amhi.service.UserService;
+
 @RestController
 @RequestMapping("/api")
 public class MyController {

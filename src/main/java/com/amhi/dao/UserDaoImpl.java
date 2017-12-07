@@ -1,4 +1,4 @@
-package com.amhi.app4;
+package com.amhi.dao;
 
 import java.util.List;
 
@@ -12,6 +12,8 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import com.amhi.model.User;
 
 @Repository
 public class UserDaoImpl implements UserDao {
