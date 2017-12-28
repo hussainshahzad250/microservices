@@ -2,7 +2,7 @@ package com.amhi.app1;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 /**
@@ -10,8 +10,9 @@ import org.springframework.context.annotation.Import;
  * @author shahzad
  *
  */
-@EnableAutoConfiguration
+
 @EnableDiscoveryClient
+@SpringBootApplication
 @Import(AccountsConfiguration.class)
 public class Application1 {
 

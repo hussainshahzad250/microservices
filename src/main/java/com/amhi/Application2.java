@@ -1,7 +1,7 @@
 package com.amhi;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import com.amhi.app1.Application1;
@@ -11,8 +11,9 @@ import com.amhi.app1.Application1;
  * @author shahzad
  *
  */
-@EnableAutoConfiguration
+
 @EnableDiscoveryClient
+@SpringBootApplication
 public class Application2 {
 	public static void main(String[] args) {
 		System.setProperty("spring.config.name", "client-server2");
